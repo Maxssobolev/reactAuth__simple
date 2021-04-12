@@ -9,8 +9,8 @@ export default function Login() {
   return (
     <div className="container page page-login">
       <h2>LogIn page</h2>
-      {data.state ? <div>Вы должны быть авторизированы для просмотра этой страницы</div> : ''}
-      {action && data.state ? <Redirect to="/client" /> : ''}
+      {data.state && <div>Вы должны быть авторизированы для просмотра этой страницы</div>}
+      {action && data.state && <Redirect to="/client" /> }
       {user ? (
         <button onClick={() => setUser(null)}>LogOut</button>
       ) : (
